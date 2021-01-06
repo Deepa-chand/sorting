@@ -1,0 +1,63 @@
+# sorting
+
+
+#include<iostream>
+#define max 20
+using namespace std;
+void display( int a[max],int n){
+	cout<<"sort\n";
+	for(int i=0;i<n;i++){
+		cout<<a[i];
+	}
+	cout<<"\n";
+}
+void insertion_sort(int a[max],int n)
+{ int k=0;
+cout<<"iteration:\n";
+
+for(int i=1;i<n;i++){
+	
+		if(a[i]<a[i-1]){
+			
+		cout<<"compare:\t"<<a[i-1]<<"---"<<a[i]<<endl;
+			
+		swap(a[i-1],a[i]) ;
+		
+		display(a,n);
+		
+		int j=i-1;
+		
+	while(j!=0)
+	
+		{
+		 cout<<"compare:\t"<<a[j-1]<<"---"<<a[j]<<endl;
+		
+		if(a[j-1]>a[j])
+		{
+				swap(a[j-1],a[j]) ;
+				display(a,n);
+			j--; 
+			}
+		else break;
+			
+		}}
+		
+		
+		
+		}
+		
+	
+		
+	
+}
+
+int main(){
+	int a[max],n;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	insertion_sort(a, n);
+	cout<<"-------------------------------------------\ninsertion sorting:\n\n";
+	display(a,n);
+}
